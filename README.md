@@ -20,3 +20,5 @@ data = dh.download_to_np(folder_name = 'data')
 ```python
 dh.download(folder_name = 'data')
 ```
+
+Support for more datasets will be added
