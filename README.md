@@ -8,15 +8,17 @@
 ```python
 from data_handler import data_handler
 ```
-1. Make an object
+4. Make an object
 ```python
 dh = data_handler()
 ```
-1. Download the data into a numpy array
+5. Download the data into a numpy array
 ```python
 data = dh.download_to_np(folder_name = 'data')
 ```
-1. Simply download the data into a folder
+6. Simply download the data into a folder
 ```python
 dh.download(folder_name = 'data')
 ```
+
+Support for more datasets will be added
