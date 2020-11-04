@@ -10,8 +10,8 @@ class data_handler(object):
     """
     
     def __init__(self):
-        self.url = 'http://yann.lecun.com/exdb/mnist/'
-        self.files = [
+        self.mnist_url = 'http://yann.lecun.com/exdb/mnist/'
+        self.mnist_files = [
             'train-images-idx3-ubyte.gz',
             'train-labels-idx1-ubyte.gz',
             't10k-images-idx3-ubyte.gz',
@@ -26,8 +26,8 @@ class data_handler(object):
         '''
         if not os.path.exists(self.dir): os.mkdir(self.dir)
         self.opaths = []
-        for file in self.files:
-            file_link = f'{self.url}{file}'
+        for file in self.mnist_files:
+            file_link = f'{self.mnist_url}{file}'
             opath = os.path.join(self.dir,file)
             opaths.append(opath)
             if not os.path.exists(opath):
@@ -43,7 +43,7 @@ class data_handler(object):
                 and their values as the images and labels
         '''
         if not os.path.exists(folder_name): self.download(folder_name)
-        self.file_links = [ folder_name + '/' + x for x in self.files ]
+        self.file_links = [ folder_name + '/' + x for x in self.mnist_files ]
         
         for file in self.file_links:
             print(f'Converting: {file}')
